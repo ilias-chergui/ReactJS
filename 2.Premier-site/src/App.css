@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.ImgHead {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  background: url("https://i.pinimg.com/originals/72/bf/c1/72bfc17df464766463ab8ee2fe4620d9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.ImgHead .TextHead {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+}
+
+.Logo {
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 30px;
+}
+
+.ImgHead .TextHead h1 {
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  font-size: 2.5em;
+  line-height: 1.35em;
+  margin: 0;
+  padding: 0;
+}
+
+.ImgHead .TextHead h1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.ImgHead .TextHead p {
+  font-size: 1.5em;
+  margin-top: 5%;
+  text-align: center;
+  color: white;
+}
+
+.ImgHead .TextHead button {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 3em 2em;
+  letter-spacing: 0.2em;
+}
+.SecondCompo {
+  height: 60vh;
+  width: 100%;
+}
+
+.SecondCompo .SecondDiv {
+  padding: 10em 0 4em 0;
+  background-color: white;
+  display: block;
+}
+
+.SecondCompo .SecondDiv .Text {
+  color: black;
+  float: left;
+  width: 45%;
+  padding: 0 3em 0 3em;
+  margin-bottom: 3em;
+  text-align: left;
+}
+
+.SecondCompo .SecondDiv .Text h2 {
+  width: 75%;
+  padding-left: 4em;
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: lighter;
+}
+
+.SecondCompo .SecondDiv .Text p {
+  width: 75%;
+  padding-left: 7em;
+  margin-top: 3em;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.SecondCompo .SecondDiv .Img {
+  float: right;
+  width: 45%;
+}
+
+.SecondCompo .SecondDiv .Img img {
+  border-radius: 5px;
+  margin-top: -1em;
+}
+
+.ThirdCompo {
+  height: 100vh;
+  width: 100%;
+  background: black url("http://mountain.org/wp-content/uploads/Miraflores-Peru_TMI-1.jpg");
+  background-size: cover;
+  padding: 2em 0 2em 0;
+}
+
+.ThirdCompo .ThirdDiv {
+  width: 60em;
+  height: 100%;
+  margin: 0 25% 0 25%;
+  display: flex;
+  align-items: center;
+}
+
+.ThirdCompo .ThirdDiv .Left {
+  color: red;
+  width: 50%;
+  padding-right: 3em;
+}
+
+.ThirdCompo .ThirdDiv .Left ul {
+  list-style-type: none;
+}
+
+.ThirdCompo .ThirdDiv .Left ul li {
+  border: 2px solid white;
+  padding: 2.5em;
+  margin-top: 6em;
+  margin-left: 4em;
+  width: 15%;
+  display: inline-block;
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari et Chrome */
+  -o-transform: rotate(45deg); /* Opera */
+}
+
+.ThirdCompo .ThirdDiv .Left ul li i {
+  -ms-transform: rotate(-45deg); /* Internet Explorer */
+  -moz-transform: rotate(-45deg); /* Firefox */
+  -webkit-transform: rotate(-45deg); /* Safari et Chrome */
+  -o-transform: rotate(-45deg); /* Opera */
+}
+
+.ThirdCompo .ThirdDiv .Right {
+  margin-top: 10%;
+  color: white;
+  padding: 0 0 0 3em;
+  width: 50%;
+  text-align: left;
+  line-height: 1.5em;
+}
+
+.ThirdCompo .ThirdDiv .Right h2 {
+  margin-bottom: 10%;
+  font-weight: lighter;
+}
+
+.ThirdCompo .ThirdDiv .Right p {
+  margin-bottom: 10%;
+}
+
+.FourthCompo {
+  height: 100vh;
+  width: 100%;
+}
+
+.FourthCompo .FourthDiv {
+  padding: 5% 10%;
+}
+
+.FourthCompo .FourthDiv .Title {
+  margin-bottom: 5%;
+  font-size: 30px;
+}
+
+.FourthCompo .FourthDiv .Title h2 {
+  margin-bottom: 3%;
+  font-size: 30px;
+  font-weight: lighter;
+  color: grey;
+}
+
+.FourthCompo .FourthDiv .Title p {
+  font-size: 20px;
+  color: grey;
+}
+
+.FourthCompo .FourthDiv .Info {
+  width: 100%;
+  display: flex;
+}
+
+.FourthCompo .FourthDiv .Info .Card {
+  height: 100%;
+  margin-left: 5%;
+}
+
+.FourthCompo .FourthDiv .Info .Card img {
+  height: 33%;
+  margin-bottom: 10%;
+  border-radius: 5px;
+}
+
+.FourthCompo .FourthDiv .Info .Card h3 {
+  height: 33%;
+  margin-bottom: 10%;
+  font-weight: lighter;
+  font-size: 30px;
+  color: grey;
+}
+
+.FourthCompo .FourthDiv .Info .Card p {
+  height: 33%;
+  margin-bottom: 10%;
+  font-size: 20px;
+  color: grey;
+}
+
+.Button button {
+  height: 50px;
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  color: grey;
+}
