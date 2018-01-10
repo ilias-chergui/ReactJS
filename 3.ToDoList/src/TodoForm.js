@@ -9,6 +9,7 @@ export default class TodoForm extends React.Component {
       done: false,
       createdAt: new Date()
     });
+    this.ToDoTitle.value = "";
   }
   render() {
     return (
@@ -16,7 +17,7 @@ export default class TodoForm extends React.Component {
         <br/>
         <form>
           <input type="text" ref={(input) => this.ToDoTitle = input} />
-          <button onClick={this.AddTodo.bind(this)}>Ok</button>
+          <button onClick={e => this.AddTodo(e)}>Ok</button>
         </form>
       </div>
     );

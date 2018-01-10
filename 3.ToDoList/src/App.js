@@ -4,14 +4,23 @@ import './App.css';
 import Liste from './List';
 import TodoForm from './TodoForm';
 
+import Rebase from 're-base';
+import app from './Base';
+var base = Rebase.createClass(app.database());
+
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos:[],
-      selectedTodos:[]
-    };
+  state = {
+    todos:[],
+    selectedTodos:[]
+  };
+
+  componentDidMount(){
+    base.syncState(`/`, {
+      context: this,
+      state: 'todos',
+      asArray: true
+    });
   }
 
   AddToList(index, event) {
@@ -43,24 +52,46 @@ class App extends Component {
 
   processTodo() {
     let list = this.state.selectedTodos;
-    list.forEach(item => item.done = !item.done)
+    let listTodo = this.state.todos;
+    list.forEach(item => {
+        let index = listTodo.indexOf(item);
+        listTodo[index].done = !listTodo[index].done
+      }
+    );
     this.setState({
-      selectedTodos: list
+      todos: listTodo,
+      selectedTodos: []
     })
+    let inpput = document.querySelectorAll('.inputs');
+    inpput.forEach(inpput => {
+        inpput.checked = false;
+      }
+    )
   }
 
-  deleteTodo(item) {
-    let trash = this.state.todos.filter((_todo) => {
-      return _todo !== item
+  deleteTodo() {
+    let list = this.state.selectedTodos;
+    let trash = this.state.todos;
+    list.forEach(todo =>
+      trash.splice(trash.indexOf(todo), 1)
+    );
+    this.setState({
+      todos: trash,
+      selectedTodos: []
     });
-    this.setState({todos: trash});
+    let inpput = document.querySelectorAll('.inputs');
+    inpput.forEach(input => {
+      input.checked = false;
+    });
   }
+
   render() {
+    const afficher = this.state.selectedTodos.length > 0;
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">My To Do List With React</h1>
           <p></p>
         </header>
         <TodoForm onNewTodo={this.onNewTodo.bind(this)} />
@@ -68,10 +99,10 @@ class App extends Component {
           AddToList={this.AddToList.bind(this)}
           todos={this.state.todos}
           onTodoToggle={this.todoToggleState.bind(this)}
-          selectedTodos={this.state.selectedTodos}
-          processTodo={this.processTodo.bind(this)}
-          deleteTodo={this.deleteTodo.bind(this)}
-          />
+        />
+        { afficher ? <button onClick={() => this.deleteTodo()}> Supprimer </button> : null }
+        { afficher ? <button onClick={() => this.processTodo()}> Inverser le statut </button> : null }
+
       </div>
     );
   }

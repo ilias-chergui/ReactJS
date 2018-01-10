@@ -8,6 +8,7 @@ export default class Liste extends React.Component {
   }
 
   showTodos(todos) {
+    console.log(todos);
     return (
       todos.map((todo, index) => {
         return (
@@ -23,15 +24,11 @@ export default class Liste extends React.Component {
   }
 
   render() {
-    const afficher = this.props.selectedTodos.length > 0;
     return (
       <div className="Liste">
         <br/>
         {this.showTodos(this.props.todos)}
         <br/>
-        {this.props.todos}
-        { afficher ? <button onClick={this.props.deleteTodo}> Supprimer </button> : null }
-        { afficher ? <button onClick={this.props.processTodo}> Inverser le statut </button> : null }
       </div>
     );
   }

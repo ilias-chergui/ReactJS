@@ -8,7 +8,8 @@ export default class TodoItem extends React.Component {
     let string = item.done ? 'Marquer à faire': 'Marquer comme fait';
     return (
       <div key={index} className="todo">
-        <input type="checkbox" value={index} onClick={(e) => AddToList(index, e.target.checked)} />
+        <input type="checkbox" className="inputs"
+        value={index} onClick={(e) => AddToList(index, e.target.checked)} />
         {item.title}
         <button onClick={() => toggleTodo(item, index)}> {string} </button>
       </div>
